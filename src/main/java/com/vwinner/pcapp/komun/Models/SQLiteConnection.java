@@ -7,8 +7,7 @@ public class SQLiteConnection{
         try {
             Class.forName("org.sqlite.JDBC");
             try {
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:data\\data1.sqlite");
-                return connection;
+                return DriverManager.getConnection("jdbc:sqlite:data\\data1.sqlite");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

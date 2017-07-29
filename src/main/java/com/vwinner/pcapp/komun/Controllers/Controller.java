@@ -3,6 +3,7 @@ package com.vwinner.pcapp.komun.Controllers;
 import com.vwinner.pcapp.komun.Models.DataModel;
 import com.vwinner.pcapp.komun.Views.MainScreen;
 
+import java.io.FileNotFoundException;
 import java.util.Date;
 
 
@@ -22,6 +23,11 @@ public class Controller {
 
     public void start() {
         Date getPayman = dataModel.getDate4Month("01.02.2017");
+        try {
+            ImportXLSX excel = ImportXLSX.getData("Комунальні послуги.xlsx");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         mainScreen.init();
     }
 
